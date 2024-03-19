@@ -1,0 +1,91 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Portal Comnect</title>
+    <link rel="icon" href="{% static 'img/wireless.ico'%}" type="image/x-icon" width="5" height="10">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+  
+    <!-- Google Fonts -->
+    <script src="https://kit.fontawesome.com/a42fb6df6b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'css/bootstrap_min.css' %}" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+</head>
+  
+<body>
+  
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+        <div class="container d-flex align-items-center">
+  
+            <h1 class="logo me-auto"><img src="{% static 'img/icon.png'%}" alt="" width="120" height="50" class="d-inline-block align-top"/></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+  
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="/">Home</a></li>
+                    <li><a class="fab fa-linkedin" href="https://www.linkedin.com/company/wnb/mycompany/"></a></li>
+                    <li><a class="fab fa-facebook" href="#"></a></li>
+                    <li><a class="fab fa-google-plus" href="http://www.comnect.com.br/"></a></li>
+                    <li><a class="getstarted scrollto" href="#about">Login</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+  
+        </div>
+    </header><!-- End Header -->
+
+<section id="hero" class="d-flex align-items-center">
+
+<div class="container">
+    <div class="section-title">
+        <h2>Preencha as informações do formulário para que a nossa ferramenta saiba quem é você!</h2>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <label for="inputEmail4" class="form-label text-center"></label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Nome">
+        </div>
+        <div class="col-md-6 offset-md-3">
+            <label for="inputPassword4" class="form-label text-center"></label>
+            <input type="password" class="form-control" id="inputPassword4" placeholder="E-mail">
+        </div>
+        <div class="col-md-6 offset-md-3">
+            <label for="inputAddress" class="form-label text-center"></label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="CNPJ">
+        </div>
+        <div class="col-md-6 offset-md-3">
+            <label for="inputAddress2" class="form-label text-center"></label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Telefone">
+        </div> </div>
+    </div><br><br>
+    <div class="col-12 text-center">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+<br><br>
+</section><!-- End Hero -->
+</main>
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+{% include 'appointments/footer.html'%}
+</footer><!-- End Footer -->
+
+
+<script src="{% static 'js/bundle_min.js'}"></script> <!--Mapa-->
+<!-- Template Main JS File -->
+<script src="{% static 'js/scripts.js'%}"></script>
+</body>
+</html>

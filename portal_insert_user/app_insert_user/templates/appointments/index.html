@@ -1,0 +1,240 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portal Comnect</title>
+  <link rel="icon" href="{% static 'img/wireless.ico'%}" type="image/x-icon" width="5" height="10">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+
+  <!-- Google Fonts -->
+  <script src="https://kit.fontawesome.com/a42fb6df6b.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'css/bootstrap_min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css'%}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><img src="{% static 'img/icon.png'%}" alt="" width="120" height="50" class="d-inline-block align-top"/></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/">Home</a></li>
+          <li><a class="fab fa-linkedin" href="https://www.linkedin.com/company/wnb/mycompany/"></a></li>
+          <li><a class="fab fa-facebook" href="#"></a></li>
+          <li><a class="fab fa-google-plus" href="http://www.comnect.com.br/"></a></li>
+          <li><a class="getstarted scrollto" href="#about">Login</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>Bem vindo ao ChatBot da Comnect !</h1>
+          <h2>Sua ferramenta de atendimento virtual.</h2>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="appointments/form.html" class="btn-get-started scrollto">Vamos começar ?</a>
+            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Assista o vídeo</span></a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="{% static 'img/hero.png' %}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Sobre nós</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+             <strong> A COMNEcT </strong>
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> A Wireless Networks Inc., sediada em San Mateo, Califórnia, foi fundada em 1997 para desenvolvimento de soluções de tecnologia.</li>
+              <li><i class="ri-check-double-line"></i> Em 1999 foi estabelecida a subsidiária Wireless Networks do Brasil Ltda. “WNB”, que desenvolveu uma completa infraestrutura de rede para transporte de dados e transações eletrônicas. Tem seu centro operacional localizado na cidade de São Paulo e seu parque tecnológico hospedados na Equinix São Paulo (SP-01), Equinix Tamboré (SP-02) e Equinix Rio de Janeiro (RJ-02) e opera hoje uma rede que abrange todo o território nacional.</li>
+            </ul>
+
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <br><strong>Disponibilidade</strong><p>
+              <i class="fa-solid fa-landmark"></i> Nossas soluções possuem diversos níveis de disponibilidade, tanto no lado do cliente, onde podemos ofertar equipamentos preparados para receber diversos links, quanto no lado dos nossos servidores que estão replicados em 3 localidades diferentes pelo Brasil.<br><br>
+              <strong>Flexibilidade</strong><br>
+              <i class="fa-solid fa-chart-simple"></i> Cada cliente possui sua particularidade, e nós compreendemos essa necessidade! Nossas soluções são customizáveis, adequando-se ao ambiente do cliente. <br><br>
+              <strong>Segurança</strong><br>
+              <i class="fa-solid fa-lock"></i> Segurança é levada extremamente a sério, mantemos nossa certificação PCI-DSS desde 2008, assim como nossos programas internos de gerenciamento de vulnerabilidades e gestão de risco. 
+            </p>
+            <a href="http://www.comnect.com.br/empresa.html" class="btn-learn-more">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Planos</h2>
+          <p>A Comnect oferece soluções que se adaptam ao seu bolso.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="box">
+              <h3>Plano Simples</h3>
+              <h4><sup>$</sup>10<span>Por mês</span></h4>
+              <ul>
+                <li><i class="bx bx-check"></i> Atendimento virtual</li>
+              </ul>
+              <a href="#" class="buy-btn">Vamos lá?</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="box featured">
+              <h3>Plano Standard</h3>
+              <h4><sup>$</sup>29<span>Por mês</span></h4>
+              <ul>
+                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
+                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
+                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
+                <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
+                <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
+              </ul>
+              <a href="#" class="buy-btn">Get Started</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <div class="box">
+              <h3>Plano Premium</h3>
+              <h4><sup>$</sup>49<span>Por mês</span></h4>
+              <ul>
+                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
+                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
+                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
+                <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
+                <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
+              </ul>
+              <a href="#" class="buy-btn">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Pricing Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Suporte Técnico</h2>
+          <p>Utilize esse formulário para entrar em contato com a nossa equipe técnica.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="fa-solid fa-city"></i>
+                <h4>Endereço:</h4>
+                <p>Engenheiro Antônio Jovino, São Paulo, SP 220</p>
+              </div>
+
+              <div class="email">
+                <i class="fa-solid fa-envelope"></i>
+                <h4>E-mail:</h4>
+                <p>suporte@comnect.com.br</p>
+              </div>
+
+              <div class="phone">
+                <i class="fa-solid fa-phone"></i>
+                <h4>Ligue:</h4>
+                <p>+55 (11) 4502-4501</p>
+              </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.323761218121!2d-46.73917242391234!3d-23.62857366406637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce514e4c51dde3%3A0x762a3e93188802cb!2sR.%20Eng.%20Ant%C3%B4nio%20Jovino%2C%20220%20-%20Vila%20Andrade%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005727-220!5e0!3m2!1spt-BR!2sbr!4v1710485186122!5m2!1spt-BR!2sbr" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Nome</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="email">E-mail</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">CNPJ</label>
+                <input type="text" class="form-control" name="subject" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Mensagem</label>
+                <textarea class="form-control" name="message" rows="10" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Enviando</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Sua mensagem foi enviada com sucesso. Retornaremos o mais rápido possível, obrigado!</div>
+              </div>
+              <div class="text-center"><button type="submit">Enviar</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+ <!-- ======= Footer ======= -->
+<footer id="footer">
+  {% include 'appointments/footer.html'%}
+  </footer><!-- End Footer -->
+  
+  <!-- Vendor JS Files -->
+  <script src="{% static 'js/bundle_min.js'%}"></script> <!--Mapa-->
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/scripts.js'%}"></script>
+
+</body>
+
+</html>
