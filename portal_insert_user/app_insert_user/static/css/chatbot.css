@@ -1,0 +1,35 @@
+.userInput{
+    border-radius: 20px;
+    width: 300px;
+    margin-top: 200px;
+    
+}
+
+button{
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 20px;
+    line-height: 1;
+    margin-top: 50px;
+    border: 2px solid #47b2e4;
+    background-color: #37517e;
+    
+}
+
+button:hover{
+background: #47b2e4;
+color: #fff;
+text-decoration: none;
+}
+
+.animate__fadeIn {
+    animation-duration: 1.5s;
+  }
+
+.close{
+    width: 20px;
+}

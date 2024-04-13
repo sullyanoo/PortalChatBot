@@ -21,6 +21,6 @@ from app_insert_user.views import form
 
 
 urlpatterns = [
-    path('', views.home, name='home'),  # Rota raiz
-    path('appointments/form.html', views.form, name='form'),  # Rota para appointments/form
+    path("", include("app_insert_user.urls")),
+
 ]

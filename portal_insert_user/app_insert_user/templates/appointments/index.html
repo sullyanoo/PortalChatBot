@@ -17,12 +17,55 @@
   <!-- Google Fonts -->
   <script src="https://kit.fontawesome.com/a42fb6df6b.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="{% static 'css/bootstrap_min.css' %}" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
   <!-- Template Main CSS File -->
+  <link href="{% static 'css/bootstrap_min.css' %}" rel="stylesheet">
   <link href="{% static 'css/style.css'%}" rel="stylesheet">
+  <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+  <link href="{% static 'css/chatbot.css' %}" rel="stylesheet">
+
+  <style>
+    .overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+  }
+  
+  /* Estilo para o popup */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #37517e;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+    z-index: 10000;
+    width: 400px; /* Ajuste o tamanho horizontal conforme necessário */
+    height: 500px; /* Ajuste o tamanho vertical conforme necessário */
+
+  }
+  
+  /* Estilo para o botão de fechar */
+  .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    color: aliceblue;
+  }
+  </style>
 </head>
 
 <body>
@@ -30,21 +73,18 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
-
       <h1 class="logo me-auto"><img src="{% static 'img/icon.png'%}" alt="" width="120" height="50" class="d-inline-block align-top"/></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="/">Home</a></li>
           <li><a class="fab fa-linkedin" href="https://www.linkedin.com/company/wnb/mycompany/"></a></li>
           <li><a class="fab fa-facebook" href="#"></a></li>
           <li><a class="fab fa-google-plus" href="http://www.comnect.com.br/"></a></li>
-          <li><a class="getstarted scrollto" href="#about">Login</a></li>
+          <li><a class="getstarted scrollto" href="appointments/login.html">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
     </div>
   </header><!-- End Header -->
 
@@ -57,8 +97,20 @@
           <h1>Bem vindo ao ChatBot da Comnect !</h1>
           <h2>Sua ferramenta de atendimento virtual.</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="appointments/form.html" class="btn-get-started scrollto">Vamos começar ?</a>
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Assista o vídeo</span></a>
+
+          <a id="openChatbotBtn" href="#" class="btn-get-started scrollto">Vamos começar ?</a>
+              <!-- Overlay para cobrir a tela -->
+              <div id="overlay" class="overlay"></div>
+              <div id="popup" class="popup animate__animated animate__fadeIn">
+                  <span class="close" onclick="closePopup()">&times;</span>
+                  <h2>Olá, me chamo Sully! Seu assistente virtual, como posso te ajudar?</h2>
+
+                  <div class="chatContainer"></div>
+                      <input type="text" class="userInput" placeholder="Digite sua mensagem...">
+                        <button onclick="sendMessage()">Enviar</button>
+                      </div>
+
+            <a href="appointments/chatbot_popup.html" class="btn-watch-video"><i class="bi bi-play-circle"></i><span>Assista o vídeo</span></a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
@@ -117,9 +169,10 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="box">
               <h3>Plano Simples</h3>
-              <h4><sup>$</sup>10<span>Por mês</span></h4>
+              <h4><sup>R$</sup>10<span>Por mês</span></h4>
               <ul>
-                <li><i class="bx bx-check"></i> Atendimento virtual</li>
+                <li> Atendimento virtual</li>
+                <li> Contato Suporte E-mail</li>
               </ul>
               <a href="#" class="buy-btn">Vamos lá?</a>
             </div>
@@ -128,30 +181,31 @@
           <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
             <div class="box featured">
               <h3>Plano Standard</h3>
-              <h4><sup>$</sup>29<span>Por mês</span></h4>
+              <h4><sup>R$</sup>29<span>Por mês</span></h4>
               <ul>
-                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
+                <li> Atendimento virtual</li>
+                <li> Contato Suporte E-mail</li>
+                <li> Contato Suporte Ativo</li>
+                
+
               </ul>
-              <a href="#" class="buy-btn">Get Started</a>
+              <a href="#" class="buy-btn">Vamos lá?</a>
             </div>
           </div>
 
           <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
             <div class="box">
               <h3>Plano Premium</h3>
-              <h4><sup>$</sup>49<span>Por mês</span></h4>
+              <h4><sup>R$</sup>49<span>Por mês</span></h4>
               <ul>
-                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
+                <li> Atendimento virtual</li>
+                <li> Contato Suporte E-mail</li>
+                <li> Contato Suporte Ativo</li>
+                <li> Monitoramento 24 Horas</li>
+                <li> Hospedagem</li>
+
               </ul>
-              <a href="#" class="buy-btn">Get Started</a>
+              <a href="#" class="buy-btn">Vamos lá?</a>
             </div>
           </div>
         </div>
@@ -234,6 +288,18 @@
   <script src="{% static 'js/bundle_min.js'%}"></script> <!--Mapa-->
   <!-- Template Main JS File -->
   <script src="{% static 'js/scripts.js'%}"></script>
+
+  <script>
+    function closePopup() {
+      document.getElementById("overlay").style.display = "none";
+      document.getElementById("popup").style.display = "none";
+    }
+  
+    function sendMessage() {
+      var userInput = document.getElementById("userInput").value;
+      // Lógica para enviar a mensagem e receber uma resposta do chatbot
+    }
+  </script>
 
 </body>
 

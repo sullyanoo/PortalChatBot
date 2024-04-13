@@ -1,0 +1,39 @@
+.footer-top {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha quando não couberem */
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* Reduzi o espaçamento entre os itens para melhor adaptabilidade */
+    background: #37517e;
+    color: #fff;
+    padding: 20px 4%; /* Reduzi o padding para economizar espaço */
+    box-sizing: border-box; /* Garante que o padding não aumente a largura do elemento */
+    
+}
+
+.footer-top a {
+    color: #fff; /* Cor dos links no footer */
+    text-decoration: none; /* Remover sublinhado padrão dos links */
+    list-style: none;
+}
+
+.footer-top a:hover{
+    color: #4286c7;
+}
+
+.social-footer {
+    font-size: 2em; /* Redimensiona o tamanho dos ícones sociais */
+}
+
+.footer-links {
+    color: white;
+}
+
+.copyright-block {
+    padding: 10px 0; /* Adicionei um pequeno padding na parte superior e inferior */
+    text-align: center;
+    background-color: #4286c7;
+    color: white;
+    outline: 0;
+    display: block;
+}

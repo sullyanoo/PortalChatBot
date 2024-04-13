@@ -1,34 +1,73 @@
-<!-- chatbot_app/templates/chatbot_app/home.html -->
+{% load static %}
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>Meu ChatBot</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Portal Comnect</title>
+    <link rel="icon" href="{% static 'img/wireless.ico'%}" type="image/x-icon" width="5" height="10">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+  
+    <!-- Google Fonts -->
+    <script src="https://kit.fontawesome.com/a42fb6df6b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+      
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'css/bootstrap_min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/chatbot.css' %}">
 </head>
 <body>
-    <div id="chat-container">
-        <div id="chat-display"></div>
-        <input type="text" id="user-input" placeholder="Digite sua mensagem..." />
-        <button onclick="sendMessage()">Enviar</button>
-    </div>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+        <div class="container d-flex align-items-center">
+  
+            <h1 class="logo me-auto"><img src="{% static 'img/icon.png'%}" alt="" width="120" height="50" class="d-inline-block align-top"/></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
 
-    <script>
-        function sendMessage() {
-            var userMessage = document.getElementById('user-input').value;
-            document.getElementById('chat-display').innerHTML += '<p><strong>Você:</strong> ' + userMessage + '</p>';
-            document.getElementById('user-input').value = '';
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="/">Home</a></li>
+                    <li><a class="fab fa-linkedin" href="https://www.linkedin.com/company/wnb/mycompany/"></a></li>
+                    <li><a class="fab fa-facebook" href="#"></a></li>
+                    <li><a class="fab fa-google-plus" href="http://www.comnect.com.br/"></a></li>
+                    <li><a class="getstarted scrollto" href="#about">Login</a></li>
+                </ul>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
 
-            // Enviar mensagem para o servidor
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', '/get_response/?message=' + userMessage, true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var response = JSON.parse(xhr.responseText).response;
-                    document.getElementById('chat-display').innerHTML += '<p><strong>ChatBot:</strong> ' + response + '</p>';
-                }
-            };
-            xhr.send();
-        }
-    </script>
+    <main>
+    <section id="hero" class="align-items-center d-inline-block">
+        <div class="container">
+            <h1>ChatBot Comnect</h1>
+            <div class="input">
+                <form method="post">
+                {% csrf_token %}
+                <input type="text" name="user_input">
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+                {% if response %}
+                <p>{{ response }}</p>
+                    {% endif %}
+        </div>
+    </section>
+    </main><br>
+    <br>
+    <br>
+    <footer id="footer">
+        {% include 'appointments/footer.html'%}
+    </footer><!-- End Footer -->
+    <script src="{% static 'js/bundle_min.js'%}"></script> <!--Mapa-->
+    <!-- Template Main JS File -->
+    <script src="{% static 'js/scripts.js'%}"></script>
+  
 </body>
 </html>

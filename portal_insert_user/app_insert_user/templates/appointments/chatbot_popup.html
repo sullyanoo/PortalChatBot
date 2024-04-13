@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Popup Chatbot</title>
+<style>
+/* Estilo para o overlay */
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 9999;
+}
+
+/* Estilo para o popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+}
+
+/* Estilo para o botão de fechar */
+.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<!-- Botão para abrir o popup -->
+<button onclick="openPopup()">Abrir Chatbot</button>
+
+<!-- Overlay para cobrir a tela -->
+<div id="overlay" class="overlay"></div>
+
+<!-- Popup do chatbot -->
+<div id="popup" class="popup">
+  <span class="close" onclick="closePopup()">&times;</span>
+  <h2>Chatbot</h2>
+  <p>Olá! Como posso ajudar você?</p>
+  <input type="text" placeholder="Digite sua mensagem...">
+</div>
+
+<script>
+document.getElementById('openChatbotBtn').addEventListener('click', function() {
+    openPopup();
+});
+// Função para abrir o popup
+function openPopup() {
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("popup").style.display = "block";
+}
+
+// Função para fechar o popup
+function closePopup() {
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
